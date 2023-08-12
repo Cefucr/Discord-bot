@@ -282,4 +282,4 @@ async def on_message(message):
 
     
 
-client.run("MTEzOTUwMjc5NDQ3OTUwOTYwNQ.GTxnZN.ATk2ee7gnXdnCMrlBi8_bnGxDLoBMH4Tp-UAyY")
+client.run(TOKEN)
