@@ -47,8 +47,8 @@ async def on_message(message):
         #Dealer and Player cards
 
         dealerhand = [card(decks),card(decks)]
-        #playerhand = [card(decks),card(decks)]
-        playerhand = [2,2]
+        playerhand = [card(decks),card(decks)]
+        
 
         if(sum(playerhand) == 22):
             playerhand[0] = 1
