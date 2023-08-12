@@ -11,7 +11,7 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'We have logged in as {client.user} to play type ".play" :) ')
 
 @client.event
 async def on_message(message):
@@ -51,7 +51,8 @@ async def on_message(message):
         #Dealer and Player cards
 
         dealerhand = [card(decks),card(decks)]
-        playerhand = [card(decks),card(decks)]
+        #playerhand = [card(decks),card(decks)]
+        playerhand = [2,2]
 
         if(sum(playerhand) == 22):
             playerhand[0] = 1
@@ -67,7 +68,7 @@ async def on_message(message):
                 
                 if(ask != "H" and ask != "S" and ask != "s" and ask != "h"):
                     await whatToDo(hand,split)
-            elif(hand[0] == hand[1]):
+            elif(hand[0] == hand[1] and len(hand) == 2):
                 await message.channel.send("[H]it, [S]tand, [D]ouble Down or [SP]lit:")
                 ask = await client.wait_for('message')
                 ask = ask.content
@@ -226,7 +227,8 @@ async def on_message(message):
                 #makes two hands from the original hand
                 hand1 = [playercards[0],card(decks)]
                 hand2 = [playercards[1],card(decks)]
-                    
+                
+                
                     
                 #plays the players hand one after another
                 await message.channel.send("Play the First hand")
