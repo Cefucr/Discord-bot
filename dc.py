@@ -20,14 +20,10 @@ async def on_message(message):
 
     if message.content.startswith('.play'):
         await message.channel.send("Let's play blackjack! \nDo you want to start?[Y/N]")
-        
-        def is_valid(m):
-            return m.author == message.author and m.content.isdigit()
-        
-        
+    
         start = await client.wait_for('message')
         start = start.content
-        if(start == "Y"):
+        if(start == "Y" or start == "y"):
             pass
         else:
             quit()
@@ -60,7 +56,7 @@ async def on_message(message):
 
         #Asks the player what they want to do with their cards
         async def whatToDo(hand,split):
-                    
+            
             if(split == True):
                 await message.channel.send("[H]it, [S]tand:")
                 ask = await client.wait_for('message')
@@ -185,7 +181,7 @@ async def on_message(message):
                 
             elif(ask == "S" or ask == "D" or ask == "s" or ask == "d"):
                 #Checks who won
-                if(ask == "s" or ask == "d"):
+                if(ask == "D" or ask == "d"):
                     playercards.append(card(decks))
                     
                 for x in range(len(playercards)):
@@ -286,4 +282,4 @@ async def on_message(message):
 
     
 
-client.run(TOKEN)
+client.run("MTEzOTUwMjc5NDQ3OTUwOTYwNQ.GTxnZN.ATk2ee7gnXdnCMrlBi8_bnGxDLoBMH4Tp-UAyY")
