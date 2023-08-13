@@ -11,7 +11,7 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    print(f'Logged in as {client.user} to play type ".play" :) ')
+    print('Logged in. To play type ".play" :) ')
 
 @client.event
 async def on_message(message):
