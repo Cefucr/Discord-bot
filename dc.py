@@ -15,14 +15,17 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    #If the messages sender is the bot it doesnt do anything.
     if message.author == client.user:
         return
 
+    #Waits until the player says .play in the server channel then asks if you want to start
     if message.content.startswith('.play'):
         await message.channel.send("Let's play blackjack! \nDo you want to start?[Y/N]")
     
         start = await client.wait_for('message')
         start = start.content
+        
         if(start == "Y" or start == "y"):
             pass
         else:
